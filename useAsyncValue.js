@@ -12,7 +12,7 @@ export default function useValue(key) {
       .finally(() => setLoading(false));
   }
   const setAsyncStorageValue = value => {
-    AsyncStorage.setItem(key, value).finally(getItem);
+    AsyncStorage.setItem(key, value).finally(getAsyncStorageValue);
   };
   useEffect(getAsyncStorageValue, [key]);
   function removeAsyncStorageKey() {
